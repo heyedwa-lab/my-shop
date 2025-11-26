@@ -2,20 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>JH Footwear | Professional Shoe Manufacturer & Exporter</title>
+  <title>NovaStep Footwear | Professional Shoe Manufacturer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Professional shoe manufacturer from China, focusing on sports shoes, casual shoes and kids shoes. OEM/ODM for global buyers." />
+  <meta
+    name="description"
+    content="NovaStep Footwear is a professional shoe manufacturer from China, focusing on sports and casual shoes for global brands and wholesalers."
+  />
   <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-alt: #ffffff;
+      --text-main: #1d1d1f;
+      --text-sub: #6e6e73;
+      --border: #d2d2d7;
+      --accent: #0071e3;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
 
     a {
@@ -29,183 +43,182 @@
     }
 
     .page {
-      max-width: 1180px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 20px 16px 40px;
+      padding: 16px 20px 60px;
     }
 
-    /* Header & nav */
-    header {
+    /* 顶部导航，偏苹果官网那种细线 + 粘性导航 */
+    .top-bar-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(245, 245, 247, 0.92);
+      border-bottom: 1px solid rgba(210, 210, 215, 0.7);
+      margin: 0 -20px;
+    }
+
+    .top-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 8px 20px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 8px 0 12px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: linear-gradient(to bottom, #020617, #0f172a);
+      gap: 18px;
     }
 
-    .logo-wrap {
+    .logo {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 20% 20%, #22c55e, #15803d);
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: radial-gradient(circle at 30% 20%, #ffffff, #111827);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 16px;
-      color: #ecfdf3;
+      font-size: 13px;
+      font-weight: 600;
+      color: #f5f5f7;
     }
 
     .logo-text-main {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
     }
 
     .logo-text-sub {
       font-size: 11px;
-      color: #9ca3af;
+      color: var(--text-sub);
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
-      font-size: 14px;
+      gap: 18px;
+      font-size: 12px;
+      color: var(--text-sub);
     }
 
     nav a {
-      color: #e5e7eb;
-      opacity: 0.8;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
     }
 
     nav a:hover {
-      opacity: 1;
-      color: #22c55e;
+      color: var(--text-main);
+      border-bottom-color: var(--text-main);
     }
 
     .nav-cta {
-      padding: 6px 14px;
+      padding: 4px 12px;
       border-radius: 999px;
-      background: #22c55e;
-      color: #02110a;
-      font-weight: 600;
-      font-size: 13px;
-      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 12px;
+      color: var(--text-main);
+      background: #ffffff;
     }
 
     .nav-cta:hover {
-      background: #16a34a;
+      border-color: rgba(0, 0, 0, 0.15);
     }
 
-    /* Hero section */
+    /* Hero 主视觉区域 */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 28px;
-      padding: 32px 0 40px;
-      border-bottom: 1px solid rgba(55, 65, 81, 0.6);
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 32px;
+      padding: 40px 0 34px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      color: #bbf7d0;
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-sub);
       margin-bottom: 10px;
     }
 
     .hero-title {
-      font-size: 30px;
-      font-weight: 800;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
-    .hero-highlight {
-      background-image: linear-gradient(to right, #22c55e, #a3e635);
+    .hero-title span {
+      background-image: linear-gradient(120deg, #000000, #555555);
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    .hero-text {
+    .hero-sub {
       font-size: 14px;
-      color: #9ca3af;
+      color: var(--text-sub);
+      max-width: 420px;
       margin-bottom: 18px;
     }
 
-    .hero-list {
+    .hero-points {
       list-style: none;
       font-size: 13px;
-      margin-bottom: 18px;
-      color: #d1d5db;
+      color: #4b4b4f;
+      margin-bottom: 22px;
     }
 
-    .hero-list li {
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-list li span {
-      font-size: 13px;
-      color: #4ade80;
+    .hero-points li {
+      margin-bottom: 6px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 14px;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
-    .hero-primary {
-      padding: 10px 20px;
+    .btn-primary {
+      padding: 9px 20px;
       border-radius: 999px;
-      background: #22c55e;
-      color: #02110a;
-      font-size: 14px;
-      font-weight: 600;
       border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.6);
-    }
-
-    .hero-primary:hover {
-      background: #16a34a;
-    }
-
-    .hero-secondary {
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: transparent;
-      border: 1px solid #4b5563;
-      color: #e5e7eb;
+      background: var(--accent);
+      color: #ffffff;
       font-size: 13px;
+      font-weight: 500;
       cursor: pointer;
     }
 
-    .hero-secondary:hover {
-      border-color: #9ca3af;
+    .btn-primary:hover {
+      background: #0077ed;
+    }
+
+    .btn-ghost {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-main);
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .btn-ghost:hover {
+      border-color: #a1a1a6;
     }
 
     .hero-note {
       font-size: 11px;
-      color: #9ca3af;
+      color: var(--text-sub);
     }
 
     .hero-right {
@@ -213,79 +226,87 @@
     }
 
     .hero-card {
-      border-radius: 18px;
-      padding: 12px;
-      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.3), transparent 50%),
-        #020617;
-      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: var(--bg-alt);
+      border-radius: 24px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     }
 
-    .hero-shoe-img {
-      border-radius: 14px;
+    .hero-img {
+      border-radius: 18px;
       overflow: hidden;
       margin-bottom: 12px;
-      border: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transform: scale(1.02);
     }
 
     .hero-card-title {
       font-size: 14px;
+      font-weight: 600;
       margin-bottom: 4px;
     }
 
     .hero-card-text {
       font-size: 12px;
-      color: #9ca3af;
-      margin-bottom: 8px;
+      color: var(--text-sub);
+      margin-bottom: 10px;
     }
 
-    .hero-pill-row {
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+      font-size: 11px;
     }
 
-    .hero-pill {
-      font-size: 10px;
+    .hero-tag {
       padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      color: #bbf7d0;
-      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #fafafa;
+      color: #4b4b4f;
     }
 
-    /* Products section */
+    /* 通用 section */
     .section {
-      padding: 32px 0 10px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
     }
 
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 14px;
       gap: 12px;
+      margin-bottom: 16px;
     }
 
     .section-title {
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .section-sub {
-      font-size: 12px;
-      color: #9ca3af;
+      font-size: 13px;
+      color: var(--text-sub);
     }
 
     .section-link {
       font-size: 12px;
-      color: #9ca3af;
+      color: var(--text-sub);
     }
 
     .section-link span {
-      color: #22c55e;
+      color: var(--accent);
     }
 
+    /* 产品区域 */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -293,18 +314,17 @@
     }
 
     .product-card {
-      background: #020617;
-      border-radius: 14px;
-      padding: 10px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+      background: var(--bg-alt);
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid var(--border);
     }
 
     .product-img {
-      border-radius: 10px;
+      border-radius: 14px;
       overflow: hidden;
       margin-bottom: 10px;
-      height: 170px;
+      height: 180px;
     }
 
     .product-img img {
@@ -316,165 +336,193 @@
 
     .product-name {
       font-size: 14px;
+      font-weight: 500;
       margin-bottom: 4px;
     }
 
     .product-tagline {
       font-size: 12px;
-      color: #9ca3af;
+      color: var(--text-sub);
       margin-bottom: 6px;
     }
 
     .product-meta {
       font-size: 11px;
-      color: #6b7280;
+      color: #86868b;
     }
 
-    /* Advantages */
-    .adv-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-    }
-
-    .adv-card {
-      background: #020617;
-      border-radius: 14px;
-      padding: 12px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .adv-title {
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .adv-text {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    /* Process */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    .process-step {
-      padding: 10px;
-      border-radius: 12px;
-      border: 1px dashed rgba(55, 65, 81, 0.9);
-    }
-
-    .process-step span {
-      display: inline-block;
-      font-size: 11px;
-      color: #22c55e;
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    /* Contact */
-    .contact-layout {
+    /* About & 优势 */
+    .about-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 22px;
-      align-items: flex-start;
+      gap: 24px;
     }
 
-    .contact-box {
-      background: #020617;
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .contact-item {
+    .about-text {
       font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    .about-text p + p {
+      margin-top: 10px;
+    }
+
+    .about-list {
+      list-style: none;
+      font-size: 13px;
+      color: #4b4b4f;
+      margin-top: 8px;
+    }
+
+    .about-list li {
       margin-bottom: 6px;
     }
 
-    .contact-item span {
-      color: #9ca3af;
+    .about-box {
+      background: var(--bg-alt);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 14px 16px;
       font-size: 12px;
-      display: inline-block;
-      min-width: 70px;
+      color: var(--text-sub);
     }
 
-    form {
+    .about-box h4 {
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .about-box ul {
+      list-style: none;
+    }
+
+    .about-box li {
+      margin-bottom: 4px;
+    }
+
+    /* OEM / ODM 流程 */
+    .process-grid {
       display: grid;
-      gap: 8px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .process-card {
+      background: var(--bg-alt);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+    }
+
+    .process-step {
+      font-size: 11px;
+      color: #86868b;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+    }
+
+    .process-title {
+      font-size: 13px;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    /* 联系方式 */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    .contact-info p + p {
+      margin-top: 6px;
+    }
+
+    .contact-highlight {
+      font-size: 14px;
+      margin-top: 10px;
+      color: var(--text-main);
+    }
+
+    .contact-box {
+      background: var(--bg-alt);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 14px 16px;
       font-size: 12px;
     }
 
-    label {
-      color: #9ca3af;
+    .contact-box label {
+      display: block;
       font-size: 12px;
+      color: var(--text-sub);
+      margin-bottom: 4px;
     }
 
-    input,
-    textarea {
+    .contact-box input,
+    .contact-box textarea {
       width: 100%;
       padding: 7px 9px;
       border-radius: 8px;
-      border: 1px solid #4b5563;
-      background: #020617;
-      color: #e5e7eb;
+      border: 1px solid #c7c7cc;
       font-size: 12px;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #ffffff;
+      margin-bottom: 10px;
     }
 
-    input:focus,
-    textarea:focus {
+    .contact-box input:focus,
+    .contact-box textarea:focus {
       outline: none;
-      border-color: #22c55e;
+      border-color: var(--accent);
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    .form-row-inline {
+    .contact-row {
       display: flex;
       gap: 8px;
     }
 
-    .form-row-inline > div {
+    .contact-row > div {
       flex: 1;
     }
 
-    .form-note {
+    .contact-note {
       font-size: 11px;
-      color: #6b7280;
+      color: var(--text-sub);
+      margin-bottom: 6px;
     }
 
     .btn-submit {
-      margin-top: 4px;
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 999px;
       border: none;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 500;
       cursor: pointer;
-      background: #22c55e;
-      color: #02110a;
-      font-size: 13px;
-      font-weight: 600;
-      justify-self: flex-start;
     }
 
     .btn-submit:hover {
-      background: #16a34a;
+      background: #0077ed;
     }
 
-    /* Footer */
+    /* 页脚 */
     footer {
-      border-top: 1px solid rgba(55, 65, 81, 0.7);
-      margin-top: 26px;
-      padding-top: 12px;
+      padding-top: 16px;
       font-size: 11px;
-      color: #6b7280;
+      color: var(--text-sub);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -482,23 +530,25 @@
     }
 
     footer a {
-      color: #9ca3af;
+      color: var(--text-sub);
     }
 
     @media (max-width: 768px) {
-      header {
+      .top-bar {
         flex-direction: column;
         align-items: flex-start;
       }
       nav {
-        width: 100%;
-        justify-content: flex-start;
         flex-wrap: wrap;
-        gap: 10px;
+        justify-content: flex-start;
       }
       .hero {
         grid-template-columns: 1fr;
       }
+      .hero-right {
+        order: -1;
+      }
+      .about-layout,
       .contact-layout {
         grid-template-columns: 1fr;
       }
@@ -507,270 +557,262 @@
 </head>
 <body>
   <div class="page">
-    <!-- 头部 Header -->
-    <header>
-      <div class="logo-wrap">
-        <div class="logo-mark">JH</div>
-        <div>
-          <div class="logo-text-main">JH FOOTWEAR</div>
-          <div class="logo-text-sub">Professional Shoe Manufacturer • Since 2015</div>
+    <!-- 顶部导航 -->
+    <div class="top-bar-wrap">
+      <div class="top-bar">
+        <div class="logo">
+          <div class="logo-mark">N</div>
+          <div>
+            <!-- 👇 把 NovaStep 改成你的品牌名 -->
+            <div class="logo-text-main">NovaStep Footwear</div>
+            <div class="logo-text-sub">Shoe Manufacturer · China</div>
+          </div>
         </div>
+        <nav>
+          <a href="#home">Overview</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#oem">OEM / ODM</a>
+          <a href="#contact" class="nav-cta">Contact</a>
+        </nav>
       </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#oem">OEM / ODM</a>
-        <a href="#contact" class="nav-cta">Get Quotation</a>
-      </nav>
-    </header>
+    </div>
 
-    <!-- Hero 区域 -->
+    <!-- Hero 主视觉 -->
     <main id="home">
       <section class="hero">
         <div>
-          <div class="hero-badge">
-            ✅ Verified factory &nbsp;·&nbsp; 100% quality inspection
-          </div>
+          <div class="hero-kicker">FOOTWEAR · OEM · EXPORT</div>
           <h1 class="hero-title">
-            Your Reliable <span class="hero-highlight">Footwear Partner</span><br />
-            for Sports & Casual Shoes
+            Minimal, clean<br />
+            <span>footwear for global brands.</span>
           </h1>
-          <p class="hero-text">
-            We are a professional footwear manufacturer from China, focusing on sports shoes, casual
-            shoes and kids shoes. We provide OEM/ODM service for brands, wholesalers and online
-            sellers worldwide.
+          <p class="hero-sub">
+            We design and manufacture sports and casual shoes for international brands, wholesalers
+            and online sellers. Simple design, reliable quality, on-time delivery.
           </p>
-          <ul class="hero-list">
-            <li><span>●</span> Low MOQ for test orders</li>
-            <li><span>●</span> Flexible customization: materials, colors, logos, packaging</li>
-            <li><span>●</span> Main markets: Europe, North America, Middle East, Southeast Asia</li>
+          <ul class="hero-points">
+            <li>• Focus on sports, casual and lifestyle sneakers</li>
+            <li>• OEM / ODM, low MOQ for test orders</li>
+            <li>• Main markets: Europe, North America, Middle East</li>
           </ul>
           <div class="hero-actions">
-            <button class="hero-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Get Latest Catalogue
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Get quotation
             </button>
-            <button class="hero-secondary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-              View Hot-Selling Styles
+            <button class="btn-ghost" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+              View key styles
             </button>
           </div>
-          <p class="hero-note">
-            📌 Chinese support available · 支持中文沟通，工厂对接更顺畅
-          </p>
+          <p class="hero-note">We support English & Chinese communication. 支持中文沟通。</p>
         </div>
 
         <div class="hero-right">
           <div class="hero-card">
-            <div class="hero-shoe-img">
+            <div class="hero-img">
+              <!-- 👇 这里的图片可以换成你自家鞋子的图 -->
               <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
-                alt="Sport shoes"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80"
+                alt="Minimal sneaker"
               />
             </div>
-            <div class="hero-card-title">Running & Training Series</div>
+            <div class="hero-card-title">Core Sneaker Collection</div>
             <div class="hero-card-text">
-              Lightweight, breathable and comfortable designs, suitable for gym, daily training and
-              e-commerce brands.
+              Clean silhouette, lightweight outsole, comfortable upper. Designed for everyday
+              lifestyle and e-commerce brands.
             </div>
-            <div class="hero-pill-row">
-              <div class="hero-pill">Breathable mesh upper</div>
-              <div class="hero-pill">Lightweight EVA outsole</div>
-              <div class="hero-pill">OEM logo support</div>
+            <div class="hero-tags">
+              <span class="hero-tag">Men / Women size runs</span>
+              <span class="hero-tag">Custom logo & colors</span>
+              <span class="hero-tag">Packaging customization</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 产品区域 Products -->
+      <!-- 产品区域 -->
       <section id="products" class="section">
         <div class="section-header">
           <div>
-            <div class="section-title">Main Product Lines</div>
-            <div class="section-sub">Sports shoes · Casual shoes · Kids shoes</div>
+            <div class="section-title">Selected styles</div>
+            <div class="section-sub">Examples for sports, casual and lifestyle series</div>
           </div>
           <div class="section-link">
-            Need other styles? <span>Contact us for full catalogue →</span>
+            Need full catalogue? <span>Contact us →</span>
           </div>
         </div>
 
         <div class="products-grid">
-          <!-- 你可以替换图片和文案 -->
           <div class="product-card">
             <div class="product-img">
               <img
-                src="https://images.unsplash.com/photo-1542213493895-edf5b94f5a33?auto=format&fit=crop&w=800&q=80"
-                alt="Men running shoes"
+                src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=900&q=80"
+                alt="Lifestyle sneaker"
               />
             </div>
-            <div class="product-name">Men's Running Shoes</div>
-            <div class="product-tagline">Lightweight · Breathable · Non-slip</div>
-            <div class="product-meta">Size: 40–46 · OEM logo · Custom colors</div>
+            <div class="product-name">Lifestyle Sneaker</div>
+            <div class="product-tagline">Clean upper · Everyday comfort</div>
+            <div class="product-meta">EU 36–46 · OEM logo · Custom colorways</div>
           </div>
 
           <div class="product-card">
             <div class="product-img">
               <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
-                alt="Training shoes"
+                src="https://images.unsplash.com/photo-1542213493895-edf5b94f5a33?auto=format&fit=crop&w=900&q=80"
+                alt="Running shoe"
               />
             </div>
-            <div class="product-name">Unisex Training Shoes</div>
-            <div class="product-tagline">Gym · Fitness · Daily wear</div>
-            <div class="product-meta">Support small orders for online sellers</div>
+            <div class="product-name">Running Trainer</div>
+            <div class="product-tagline">Lightweight · Breathable mesh</div>
+            <div class="product-meta">Gym / Running · Target EU / US market</div>
           </div>
 
           <div class="product-card">
             <div class="product-img">
               <img
-                src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=800&q=80"
-                alt="Casual sneakers"
+                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=900&q=80"
+                alt="Slip-on shoe"
               />
             </div>
-            <div class="product-name">Casual Sneakers</div>
-            <div class="product-tagline">Street style · Everyday comfort</div>
-            <div class="product-meta">Popular in EU market · Flexible packing</div>
+            <div class="product-name">Slip-on Comfort</div>
+            <div class="product-tagline">Minimal design · Easy to wear</div>
+            <div class="product-meta">Good for online brands & private label</div>
           </div>
 
           <div class="product-card">
             <div class="product-img">
               <img
-                src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80"
-                alt="Kids shoes"
+                src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=80"
+                alt="Kids shoe"
               />
             </div>
-            <div class="product-name">Kids Shoes</div>
-            <div class="product-tagline">Safety first · Soft and durable</div>
-            <div class="product-meta">Size: 25–35 · EN standard materials</div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-img">
-              <img
-                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80"
-                alt="Slip-on shoes"
-              />
-            </div>
-            <div class="product-name">Slip-On Shoes</div>
-            <div class="product-tagline">Easy wear · Travel-friendly</div>
-            <div class="product-meta">Ideal for Amazon / Shopee / Lazada</div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-img">
-              <img
-                src="https://images.unsplash.com/photo-1588361861040-3c9545970934?auto=format&fit=crop&w=800&q=80"
-                alt="Canvas shoes"
-              />
-            </div>
-            <div class="product-name">Canvas Shoes</div>
-            <div class="product-tagline">Classic style · High margin</div>
-            <div class="product-meta">Support brand customization & packaging</div>
+            <div class="product-name">Kids Sneaker</div>
+            <div class="product-tagline">Soft · Lightweight · Safe materials</div>
+            <div class="product-meta">Kids size runs · EN standard available</div>
           </div>
         </div>
       </section>
 
-      <!-- About & Advantages -->
+      <!-- About & 优势 -->
       <section id="about" class="section">
         <div class="section-header">
           <div>
-            <div class="section-title">About JH Footwear</div>
-            <div class="section-sub">Factory-based exporter from China</div>
+            <div class="section-title">About NovaStep</div>
+            <div class="section-sub">Factory-backed footwear supplier from China</div>
           </div>
         </div>
 
-        <div class="adv-grid">
-          <div class="adv-card">
-            <div class="adv-title">Factory Background</div>
-            <div class="adv-text">
-              Located in Fujian, China, we work closely with several audited factories. Monthly
-              capacity 50,000+ pairs, supporting both bulk orders and flexible test orders.
-            </div>
+        <div class="about-layout">
+          <div class="about-text">
+            <p>
+              NovaStep Footwear works closely with audited factories in Fujian and Guangdong,
+              focusing on sports and casual shoes. We understand what global buyers care about:
+              stable quality, clear communication and on-time delivery.
+            </p>
+            <p>
+              We support flexible cooperation: from small test orders for online sellers, to
+              long-term programs for brands and wholesalers.
+            </p>
+            <ul class="about-list">
+              <li>• Monthly capacity: 30,000–50,000 pairs (combined)</li>
+              <li>• Lead time: around 35–45 days after order confirmation</li>
+              <li>• Terms: EXW / FOB / CIF, flexible shipping solutions</li>
+            </ul>
           </div>
-
-          <div class="adv-card">
-            <div class="adv-title">Quality Control</div>
-            <div class="adv-text">
-              100% inspection before shipment. Random carton check and professional packaging to
-              guarantee quality when goods arrive at your warehouse.
-            </div>
-          </div>
-
-          <div class="adv-card">
-            <div class="adv-title">Shipping & Terms</div>
-            <div class="adv-text">
-              EXW, FOB, CIF are available. Long-term cooperation with forwarders for sea and air
-              freight. We also support small parcel shipping for online sellers.
-            </div>
+          <div class="about-box">
+            <h4>What we focus on</h4>
+            <ul>
+              <li>• Sports sneakers / trainers</li>
+              <li>• Casual / lifestyle shoes</li>
+              <li>• Slip-on and canvas shoes</li>
+              <li>• Kids sneakers</li>
+            </ul>
+            <h4 style="margin-top:10px;">Quality approach</h4>
+            <ul>
+              <li>• Material checking before production</li>
+              <li>• In-line inspection during production</li>
+              <li>• Final inspection before shipment</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!-- OEM / ODM -->
+      <!-- OEM / ODM 流程 -->
       <section id="oem" class="section">
         <div class="section-header">
           <div>
-            <div class="section-title">OEM / ODM Service</div>
-            <div class="section-sub">From idea to real product</div>
+            <div class="section-title">OEM / ODM process</div>
+            <div class="section-sub">From idea to shipment</div>
           </div>
         </div>
-        <div class="process-steps">
-          <div class="process-step">
-            <span>01 · Inquiry</span>
-            Send us your target market, quantity and shoe types. We will recommend suitable styles
-            and quote within 24 hours.
+
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-step">STEP 01</div>
+            <div class="process-title">Inquiry & briefing</div>
+            <p>
+              Share your target market, styles, estimated quantity and target price. We suggest
+              suitable materials and constructions.
+            </p>
           </div>
-          <div class="process-step">
-            <span>02 · Sampling</span>
-            We make samples based on your design or logo. Sample pictures and videos for checking,
-            then ship physical samples if needed.
+
+          <div class="process-card">
+            <div class="process-step">STEP 02</div>
+            <div class="process-title">Sampling</div>
+            <p>
+              We prepare samples based on your designs or references. Photos and videos provided
+              before shipping physical samples.
+            </p>
           </div>
-          <div class="process-step">
-            <span>03 · Production</span>
-            After order confirmed, we arrange mass production with clear production schedule and
-            regular updates.
+
+          <div class="process-card">
+            <div class="process-step">STEP 03</div>
+            <div class="process-title">Order & production</div>
+            <p>
+              Once order is confirmed, we arrange production with a clear timeline and regular
+              updates on key stages.
+            </p>
           </div>
-          <div class="process-step">
-            <span>04 · Inspection & Shipment</span>
-            Final inspection before shipment. Help arrange shipping and provide all necessary
-            documents for customs clearance.
+
+          <div class="process-card">
+            <div class="process-step">STEP 04</div>
+            <div class="process-title">Inspection & shipment</div>
+            <p>
+              Final quality check before shipment. We help arrange shipping and provide necessary
+              documents for customs clearance.
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- Contact -->
+      <!-- 联系方式 -->
       <section id="contact" class="section">
         <div class="section-header">
           <div>
-            <div class="section-title">Contact & Quotation</div>
-            <div class="section-sub">Tell us your needs, we reply within 24 hours</div>
+            <div class="section-title">Contact & quotation</div>
+            <div class="section-sub">Tell us what you need, we reply within 24 hours</div>
           </div>
         </div>
 
         <div class="contact-layout">
-          <div class="contact-box">
-            <div class="contact-item">
-              <span>📧 Email:</span> <strong>sales@jh-footwear.com</strong>
-            </div>
-            <div class="contact-item">
-              <span>📱 WhatsApp:</span> <strong>+86-138-0000-0000</strong>
-            </div>
-            <div class="contact-item">
-              <span>🏭 Location:</span> Fujian, China
-            </div>
-            <div class="contact-item">
-              <span>💬 Language:</span> English / Chinese
-            </div>
-            <p class="form-note" style="margin-top:8px;">
-              👉 You can also fill in the form, we will send price list and catalogue to your email.
+          <div class="contact-info">
+            <!-- 👇 把这里换成你的真实联系方式 -->
+            <p><strong>Email:</strong> sales@novastep-footwear.com</p>
+            <p><strong>WhatsApp:</strong> +86-138-0000-0000</p>
+            <p><strong>Location:</strong> Fujian, China</p>
+            <p><strong>Languages:</strong> English / Chinese</p>
+            <p class="contact-highlight">
+              Prefer WeChat? You can also leave your WeChat ID in the message, we will add you for
+              detailed communication.
             </p>
           </div>
 
           <div class="contact-box">
-            <!-- 这个表单现在只是前端展示，不会真正发邮件 -->
+            <!-- 这里只是展示用的表单，不会真的发送邮件，后续可以接邮件服务 -->
             <form onsubmit="alert('Thank you! We will contact you within 24 hours.'); return false;">
-              <div class="form-row-inline">
+              <div class="contact-row">
                 <div>
-                  <label for="name">Your Name</label>
+                  <label for="name">Name</label>
                   <input id="name" type="text" placeholder="Your full name" required />
                 </div>
                 <div>
@@ -778,28 +820,27 @@
                   <input id="company" type="text" placeholder="Company / Brand" />
                 </div>
               </div>
-              <div class="form-row-inline">
+              <div class="contact-row">
                 <div>
                   <label for="email">Email</label>
                   <input id="email" type="email" placeholder="name@example.com" required />
                 </div>
                 <div>
-                  <label for="market">Target Market</label>
+                  <label for="market">Target market</label>
                   <input id="market" type="text" placeholder="EU / US / Middle East..." />
                 </div>
               </div>
-              <div>
-                <label for="message">Product Requirements</label>
-                <textarea
-                  id="message"
-                  placeholder="Shoe types, quantity, target price, etc."
-                  required
-                ></textarea>
-              </div>
-              <p class="form-note">
-                You can also write in Chinese, we will translate and reply in English.
+              <label for="message">Product requirements</label>
+              <textarea
+                id="message"
+                placeholder="Shoe types, quantity, target price, etc. You can also write in Chinese."
+                required
+              ></textarea>
+              <p class="contact-note">
+                This form is for demo. For real cooperation, please also send details directly to
+                our email.
               </p>
-              <button class="btn-submit" type="submit">Send Inquiry</button>
+              <button type="submit" class="btn-submit">Send inquiry</button>
             </form>
           </div>
         </div>
@@ -807,10 +848,9 @@
     </main>
 
     <footer>
-      <div>© 2025 JH Footwear. All rights reserved.</div>
-      <div style="font-size:10px;">Designed & coded by JH · Powered by GitHub Pages</div>
+      <div>© 2025 NovaStep Footwear. All rights reserved.</div>
+      <div>Designed by NovaStep · Hosted on GitHub Pages</div>
     </footer>
   </div>
 </body>
 </html>
-
