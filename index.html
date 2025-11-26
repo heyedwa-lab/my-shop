@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>NovaStep Footwear | Professional Shoe Manufacturer</title>
+  <title>NovaStep | Minimal Footwear for Global Brands</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="NovaStep Footwear is a professional shoe manufacturer from China, focusing on sports and casual shoes for global brands and wholesalers."
+    content="Minimal, clean footwear from China for global brands and online sellers. OEM / ODM sports and casual shoes."
   />
   <style>
     :root {
-      --bg: #f5f5f7;
-      --bg-alt: #ffffff;
-      --text-main: #1d1d1f;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --text-main: #111111;
       --text-sub: #6e6e73;
       --border: #d2d2d7;
       --accent: #0071e3;
@@ -24,6 +24,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Arial, sans-serif;
       background: var(--bg);
@@ -32,37 +36,36 @@
       line-height: 1.5;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     img {
       max-width: 100%;
       display: block;
     }
 
-    .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 20px 60px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* 顶部导航，偏苹果官网那种细线 + 粘性导航 */
-    .top-bar-wrap {
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* 顶部导航：细、干净 */
+    .nav-wrap {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       backdrop-filter: blur(18px);
-      background: rgba(245, 245, 247, 0.92);
+      background: rgba(255, 255, 255, 0.9);
       border-bottom: 1px solid rgba(210, 210, 215, 0.7);
-      margin: 0 -20px;
     }
 
-    .top-bar {
-      max-width: 1100px;
+    .nav {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 8px 20px 10px;
+      padding: 10px 20px 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,22 +79,23 @@
     }
 
     .logo-mark {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 7px;
       background: radial-gradient(circle at 30% 20%, #ffffff, #111827);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: #f5f5f7;
     }
 
     .logo-text-main {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .logo-text-sub {
@@ -102,7 +106,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       font-size: 12px;
       color: var(--text-sub);
     }
@@ -121,36 +125,33 @@
       padding: 4px 12px;
       border-radius: 999px;
       border: 1px solid rgba(0, 0, 0, 0.08);
-      font-size: 12px;
-      color: var(--text-main);
       background: #ffffff;
+      color: var(--text-main);
+      font-size: 12px;
     }
 
     .nav-cta:hover {
-      border-color: rgba(0, 0, 0, 0.15);
+      border-color: rgba(0, 0, 0, 0.16);
     }
 
-    /* Hero 主视觉区域 */
+    /* Hero：大字 + 大图 + 留白 */
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      align-items: center;
-      gap: 32px;
-      padding: 40px 0 34px;
+      padding: 60px 0 50px;
       border-bottom: 1px solid var(--border);
+      text-align: center;
     }
 
     .hero-kicker {
       font-size: 12px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-sub);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hero-title {
-      font-size: 34px;
-      line-height: 1.15;
+      font-size: 44px;
+      line-height: 1.08;
       font-weight: 700;
       margin-bottom: 10px;
     }
@@ -162,33 +163,22 @@
     }
 
     .hero-sub {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-sub);
-      max-width: 420px;
-      margin-bottom: 18px;
-    }
-
-    .hero-points {
-      list-style: none;
-      font-size: 13px;
-      color: #4b4b4f;
-      margin-bottom: 22px;
-    }
-
-    .hero-points li {
-      margin-bottom: 6px;
+      max-width: 520px;
+      margin: 0 auto 24px;
     }
 
     .hero-actions {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .btn-primary {
-      padding: 9px 20px;
+      padding: 9px 22px;
       border-radius: 999px;
       border: none;
       background: var(--accent);
@@ -203,7 +193,7 @@
     }
 
     .btn-ghost {
-      padding: 8px 14px;
+      padding: 8px 18px;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: transparent;
@@ -221,75 +211,106 @@
       color: var(--text-sub);
     }
 
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-card {
-      background: var(--bg-alt);
-      border-radius: 24px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .hero-img {
-      border-radius: 18px;
+    .hero-image-wrap {
+      margin-top: 36px;
+      border-radius: 32px;
       overflow: hidden;
-      margin-bottom: 12px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 18px;
     }
 
-    .hero-img img {
+    .hero-image-inner {
+      border-radius: 24px;
+      overflow: hidden;
+      max-height: 420px;
+    }
+
+    .hero-image-inner img {
       width: 100%;
-      height: 260px;
+      height: 100%;
       object-fit: cover;
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
-    .hero-card-title {
-      font-size: 14px;
+    /* Tiles 区域：类似苹果下面一格格产品卡片 */
+    .tiles-section {
+      padding: 40px 0 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .tile {
+      background: var(--bg-soft);
+      border-radius: 26px;
+      padding: 20px 16px 16px;
+      text-align: center;
+    }
+
+    .tile.dark {
+      background: #111111;
+      color: #f5f5f7;
+    }
+
+    .tile-title {
+      font-size: 20px;
       font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .hero-card-text {
-      font-size: 12px;
+    .tile-sub {
+      font-size: 13px;
       color: var(--text-sub);
       margin-bottom: 10px;
     }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 11px;
+    .tile.dark .tile-sub {
+      color: #a1a1a6;
     }
 
-    .hero-tag {
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      background: #fafafa;
-      color: #4b4b4f;
+    .tile-img {
+      border-radius: 22px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      height: 220px;
     }
 
-    /* 通用 section */
+    .tile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.03);
+    }
+
+    .tile-foot {
+      font-size: 12px;
+      color: #86868b;
+    }
+
+    .tile.dark .tile-foot {
+      color: #d2d2d7;
+    }
+
+    /* About + Process */
     .section {
-      padding: 28px 0;
+      padding: 40px 0;
       border-bottom: 1px solid var(--border);
     }
 
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      text-align: center;
     }
 
     .section-title {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .section-sub {
@@ -297,69 +318,16 @@
       color: var(--text-sub);
     }
 
-    .section-link {
-      font-size: 12px;
-      color: var(--text-sub);
-    }
-
-    .section-link span {
-      color: var(--accent);
-    }
-
-    /* 产品区域 */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .product-card {
-      background: var(--bg-alt);
-      border-radius: 18px;
-      padding: 14px;
-      border: 1px solid var(--border);
-    }
-
-    .product-img {
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 10px;
-      height: 180px;
-    }
-
-    .product-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.02);
-    }
-
-    .product-name {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .product-tagline {
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 6px;
-    }
-
-    .product-meta {
-      font-size: 11px;
-      color: #86868b;
-    }
-
-    /* About & 优势 */
     .about-layout {
+      max-width: 880px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
     }
 
     .about-text {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-sub);
     }
 
@@ -369,9 +337,9 @@
 
     .about-list {
       list-style: none;
+      margin-top: 10px;
       font-size: 13px;
       color: #4b4b4f;
-      margin-top: 8px;
     }
 
     .about-list li {
@@ -379,18 +347,15 @@
     }
 
     .about-box {
-      background: var(--bg-alt);
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 14px 16px;
+      background: var(--bg-soft);
+      border-radius: 22px;
+      padding: 16px 16px 14px;
       font-size: 12px;
-      color: var(--text-sub);
     }
 
     .about-box h4 {
       font-size: 13px;
-      margin-bottom: 8px;
-      color: var(--text-main);
+      margin-bottom: 6px;
     }
 
     .about-box ul {
@@ -401,38 +366,10 @@
       margin-bottom: 4px;
     }
 
-    /* OEM / ODM 流程 */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-      font-size: 12px;
-      color: var(--text-sub);
-    }
-
-    .process-card {
-      background: var(--bg-alt);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 12px 14px;
-    }
-
-    .process-step {
-      font-size: 11px;
-      color: #86868b;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 4px;
-    }
-
-    .process-title {
-      font-size: 13px;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-
-    /* 联系方式 */
+    /* Contact */
     .contact-layout {
+      max-width: 880px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 24px;
@@ -440,7 +377,7 @@
     }
 
     .contact-info {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-sub);
     }
 
@@ -449,16 +386,15 @@
     }
 
     .contact-highlight {
-      font-size: 14px;
       margin-top: 10px;
+      font-size: 14px;
       color: var(--text-main);
     }
 
     .contact-box {
-      background: var(--bg-alt);
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 14px 16px;
+      background: var(--bg-soft);
+      border-radius: 22px;
+      padding: 16px 18px;
       font-size: 12px;
     }
 
@@ -473,10 +409,10 @@
     .contact-box textarea {
       width: 100%;
       padding: 7px 9px;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #c7c7cc;
-      font-size: 12px;
       font-family: inherit;
+      font-size: 12px;
       color: var(--text-main);
       background: #ffffff;
       margin-bottom: 10px;
@@ -518,9 +454,9 @@
       background: #0077ed;
     }
 
-    /* 页脚 */
+    /* Footer */
     footer {
-      padding-top: 16px;
+      padding-top: 20px;
       font-size: 11px;
       color: var(--text-sub);
       display: flex;
@@ -529,24 +465,21 @@
       gap: 6px;
     }
 
-    footer a {
-      color: var(--text-sub);
-    }
-
-    @media (max-width: 768px) {
-      .top-bar {
+    @media (max-width: 900px) {
+      .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 6px;
       }
       nav {
         flex-wrap: wrap;
         justify-content: flex-start;
       }
-      .hero {
-        grid-template-columns: 1fr;
+      .hero-title {
+        font-size: 32px;
       }
-      .hero-right {
-        order: -1;
+      .hero-image-wrap {
+        margin-top: 24px;
       }
       .about-layout,
       .contact-layout {
@@ -556,175 +489,130 @@
   </style>
 </head>
 <body>
-  <div class="page">
-    <!-- 顶部导航 -->
-    <div class="top-bar-wrap">
-      <div class="top-bar">
-        <div class="logo">
-          <div class="logo-mark">N</div>
-          <div>
-            <!-- 👇 把 NovaStep 改成你的品牌名 -->
-            <div class="logo-text-main">NovaStep Footwear</div>
-            <div class="logo-text-sub">Shoe Manufacturer · China</div>
-          </div>
+  <!-- 顶部导航 -->
+  <div class="nav-wrap">
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark">N</div>
+        <div>
+          <!-- 👇 这里改成你的品牌名 -->
+          <div class="logo-text-main">NOVASTEP</div>
+          <div class="logo-text-sub">Footwear Manufacturer · China</div>
         </div>
-        <nav>
-          <a href="#home">Overview</a>
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
-          <a href="#oem">OEM / ODM</a>
-          <a href="#contact" class="nav-cta">Contact</a>
-        </nav>
       </div>
+      <nav>
+        <a href="#home">Overview</a>
+        <a href="#lines">Collections</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
     </div>
+  </div>
 
-    <!-- Hero 主视觉 -->
+  <div class="page">
+    <!-- Hero 大标题 + 大图 -->
     <main id="home">
       <section class="hero">
-        <div>
-          <div class="hero-kicker">FOOTWEAR · OEM · EXPORT</div>
-          <h1 class="hero-title">
-            Minimal, clean<br />
-            <span>footwear for global brands.</span>
-          </h1>
-          <p class="hero-sub">
-            We design and manufacture sports and casual shoes for international brands, wholesalers
-            and online sellers. Simple design, reliable quality, on-time delivery.
-          </p>
-          <ul class="hero-points">
-            <li>• Focus on sports, casual and lifestyle sneakers</li>
-            <li>• OEM / ODM, low MOQ for test orders</li>
-            <li>• Main markets: Europe, North America, Middle East</li>
-          </ul>
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Get quotation
-            </button>
-            <button class="btn-ghost" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-              View key styles
-            </button>
-          </div>
-          <p class="hero-note">We support English & Chinese communication. 支持中文沟通。</p>
+        <div class="hero-kicker">FOOTWEAR · OEM · EXPORT</div>
+        <h1 class="hero-title">
+          Minimal sneakers,<br />
+          <span>built for global brands.</span>
+        </h1>
+        <p class="hero-sub">
+          We design and manufacture clean, everyday footwear for brands and online sellers worldwide.
+          Simple silhouettes, reliable quality, on-time delivery.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Get quotation
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('lines').scrollIntoView({behavior:'smooth'})">
+            View collections
+          </button>
         </div>
+        <p class="hero-note">English & Chinese supported · 支持中文对接</p>
 
-        <div class="hero-right">
-          <div class="hero-card">
-            <div class="hero-img">
-              <!-- 👇 这里的图片可以换成你自家鞋子的图 -->
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80"
-                alt="Minimal sneaker"
-              />
-            </div>
-            <div class="hero-card-title">Core Sneaker Collection</div>
-            <div class="hero-card-text">
-              Clean silhouette, lightweight outsole, comfortable upper. Designed for everyday
-              lifestyle and e-commerce brands.
-            </div>
-            <div class="hero-tags">
-              <span class="hero-tag">Men / Women size runs</span>
-              <span class="hero-tag">Custom logo & colors</span>
-              <span class="hero-tag">Packaging customization</span>
-            </div>
+        <div class="hero-image-wrap">
+          <div class="hero-image-inner">
+            <!-- 👇 这里换成你自己鞋子的横图，效果会更像苹果官网 -->
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80"
+              alt="Main sneaker collection"
+            />
           </div>
         </div>
       </section>
 
-      <!-- 产品区域 -->
-      <section id="products" class="section">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Selected styles</div>
-            <div class="section-sub">Examples for sports, casual and lifestyle series</div>
-          </div>
-          <div class="section-link">
-            Need full catalogue? <span>Contact us →</span>
-          </div>
-        </div>
-
-        <div class="products-grid">
-          <div class="product-card">
-            <div class="product-img">
+      <!-- 三块产品 Tile，类似苹果下面的卡片 -->
+      <section id="lines" class="tiles-section">
+        <div class="tiles-grid">
+          <div class="tile">
+            <h3 class="tile-title">Sport & Training</h3>
+            <p class="tile-sub">Lightweight trainers for gym, running and daily commute.</p>
+            <div class="tile-img">
               <img
-                src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=900&q=80"
-                alt="Lifestyle sneaker"
+                src="https://images.unsplash.com/photo-1542213493895-edf5b94f5a33?auto=format&fit=crop&w=1200&q=80"
+                alt="Sport shoes"
               />
             </div>
-            <div class="product-name">Lifestyle Sneaker</div>
-            <div class="product-tagline">Clean upper · Everyday comfort</div>
-            <div class="product-meta">EU 36–46 · OEM logo · Custom colorways</div>
+            <p class="tile-foot">EU 40–46 · OEM logo · Custom colors</p>
           </div>
 
-          <div class="product-card">
-            <div class="product-img">
+          <div class="tile dark">
+            <h3 class="tile-title">Casual & Lifestyle</h3>
+            <p class="tile-sub">Minimal silhouettes for everyday wear and brand projects.</p>
+            <div class="tile-img">
               <img
-                src="https://images.unsplash.com/photo-1542213493895-edf5b94f5a33?auto=format&fit=crop&w=900&q=80"
-                alt="Running shoe"
+                src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=1200&q=80"
+                alt="Lifestyle shoes"
               />
             </div>
-            <div class="product-name">Running Trainer</div>
-            <div class="product-tagline">Lightweight · Breathable mesh</div>
-            <div class="product-meta">Gym / Running · Target EU / US market</div>
+            <p class="tile-foot">Suitable for brand collaborations & retail channels</p>
           </div>
 
-          <div class="product-card">
-            <div class="product-img">
+          <div class="tile">
+            <h3 class="tile-title">Kids & Slip-on</h3>
+            <p class="tile-sub">Soft, comfortable options for kids and travel-friendly slip-ons.</p>
+            <div class="tile-img">
               <img
-                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=900&q=80"
-                alt="Slip-on shoe"
+                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=1200&q=80"
+                alt="Kids and slip-on"
               />
             </div>
-            <div class="product-name">Slip-on Comfort</div>
-            <div class="product-tagline">Minimal design · Easy to wear</div>
-            <div class="product-meta">Good for online brands & private label</div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-img">
-              <img
-                src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=80"
-                alt="Kids shoe"
-              />
-            </div>
-            <div class="product-name">Kids Sneaker</div>
-            <div class="product-tagline">Soft · Lightweight · Safe materials</div>
-            <div class="product-meta">Kids size runs · EN standard available</div>
+            <p class="tile-foot">Kids size runs · Ideal for online sellers</p>
           </div>
         </div>
       </section>
 
-      <!-- About & 优势 -->
+      <!-- About 工厂与合作方式 -->
       <section id="about" class="section">
         <div class="section-header">
-          <div>
-            <div class="section-title">About NovaStep</div>
-            <div class="section-sub">Factory-backed footwear supplier from China</div>
-          </div>
+          <div class="section-title">Factory-backed. Simple to work with.</div>
+          <div class="section-sub">来自中国的鞋厂合作伙伴，适合长期稳定合作</div>
         </div>
 
         <div class="about-layout">
           <div class="about-text">
             <p>
-              NovaStep Footwear works closely with audited factories in Fujian and Guangdong,
-              focusing on sports and casual shoes. We understand what global buyers care about:
-              stable quality, clear communication and on-time delivery.
+              We work with audited factories in Fujian and Guangdong, focusing on sports and casual
+              sneakers. Our team understands what international buyers care about: stable quality,
+              clear communication and realistic delivery times.
             </p>
             <p>
-              We support flexible cooperation: from small test orders for online sellers, to
-              long-term programs for brands and wholesalers.
+              无论是传统品牌、批发商，还是跨境电商卖家，我们都可以从小批量测试订单开始，逐步建立长期合作。
             </p>
             <ul class="about-list">
               <li>• Monthly capacity: 30,000–50,000 pairs (combined)</li>
-              <li>• Lead time: around 35–45 days after order confirmation</li>
-              <li>• Terms: EXW / FOB / CIF, flexible shipping solutions</li>
+              <li>• Lead time: 35–45 days after order confirmation</li>
+              <li>• Terms: EXW / FOB / CIF · flexible shipping options</li>
             </ul>
           </div>
           <div class="about-box">
             <h4>What we focus on</h4>
             <ul>
-              <li>• Sports sneakers / trainers</li>
-              <li>• Casual / lifestyle shoes</li>
-              <li>• Slip-on and canvas shoes</li>
+              <li>• Sports trainers / running shoes</li>
+              <li>• Casual & lifestyle sneakers</li>
+              <li>• Slip-on & canvas shoes</li>
               <li>• Kids sneakers</li>
             </ul>
             <h4 style="margin-top:10px;">Quality approach</h4>
@@ -737,108 +625,72 @@
         </div>
       </section>
 
-      <!-- OEM / ODM 流程 -->
-      <section id="oem" class="section">
-        <div class="section-header">
-          <div>
-            <div class="section-title">OEM / ODM process</div>
-            <div class="section-sub">From idea to shipment</div>
-          </div>
-        </div>
-
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-step">STEP 01</div>
-            <div class="process-title">Inquiry & briefing</div>
-            <p>
-              Share your target market, styles, estimated quantity and target price. We suggest
-              suitable materials and constructions.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <div class="process-step">STEP 02</div>
-            <div class="process-title">Sampling</div>
-            <p>
-              We prepare samples based on your designs or references. Photos and videos provided
-              before shipping physical samples.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <div class="process-step">STEP 03</div>
-            <div class="process-title">Order & production</div>
-            <p>
-              Once order is confirmed, we arrange production with a clear timeline and regular
-              updates on key stages.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <div class="process-step">STEP 04</div>
-            <div class="process-title">Inspection & shipment</div>
-            <p>
-              Final quality check before shipment. We help arrange shipping and provide necessary
-              documents for customs clearance.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 联系方式 -->
+      <!-- Contact 联系方式 -->
       <section id="contact" class="section">
         <div class="section-header">
-          <div>
-            <div class="section-title">Contact & quotation</div>
-            <div class="section-sub">Tell us what you need, we reply within 24 hours</div>
-          </div>
+          <div class="section-title">Contact & quotation</div>
+          <div class="section-sub">Tell us what you need · 我们在 24 小时内回复</div>
         </div>
 
         <div class="contact-layout">
           <div class="contact-info">
-            <!-- 👇 把这里换成你的真实联系方式 -->
+            <!-- 👇 这里改成你的真实联系方式 -->
             <p><strong>Email:</strong> sales@novastep-footwear.com</p>
             <p><strong>WhatsApp:</strong> +86-138-0000-0000</p>
+            <p><strong>WeChat:</strong> novastep-footwear</p>
             <p><strong>Location:</strong> Fujian, China</p>
-            <p><strong>Languages:</strong> English / Chinese</p>
             <p class="contact-highlight">
-              Prefer WeChat? You can also leave your WeChat ID in the message, we will add you for
-              detailed communication.
+              You can write in English or Chinese. 请简单说明鞋型、数量、目标市场和目标价格区间，我们会给出对应建议和报价。
             </p>
           </div>
 
           <div class="contact-box">
-            <!-- 这里只是展示用的表单，不会真的发送邮件，后续可以接邮件服务 -->
-            <form onsubmit="alert('Thank you! We will contact you within 24 hours.'); return false;">
+            <!-- 这里只是展示用，不再用 alert 打扰你：提交会打开邮箱发邮件 -->
+            <form
+              action="mailto:sales@novastep-footwear.com"
+              method="post"
+              enctype="text/plain"
+            >
               <div class="contact-row">
                 <div>
                   <label for="name">Name</label>
-                  <input id="name" type="text" placeholder="Your full name" required />
+                  <input id="name" name="Name" type="text" placeholder="Your name" required />
                 </div>
                 <div>
-                  <label for="company">Company</label>
-                  <input id="company" type="text" placeholder="Company / Brand" />
+                  <label for="company">Company / Brand</label>
+                  <input id="company" name="Company" type="text" placeholder="Company / Brand" />
                 </div>
               </div>
               <div class="contact-row">
                 <div>
                   <label for="email">Email</label>
-                  <input id="email" type="email" placeholder="name@example.com" required />
+                  <input
+                    id="email"
+                    name="Email"
+                    type="email"
+                    placeholder="name@example.com"
+                    required
+                  />
                 </div>
                 <div>
                   <label for="market">Target market</label>
-                  <input id="market" type="text" placeholder="EU / US / Middle East..." />
+                  <input
+                    id="market"
+                    name="Market"
+                    type="text"
+                    placeholder="EU / US / Middle East..."
+                  />
                 </div>
               </div>
               <label for="message">Product requirements</label>
               <textarea
                 id="message"
-                placeholder="Shoe types, quantity, target price, etc. You can also write in Chinese."
+                name="Message"
+                placeholder="Shoe types, quantity, target price, etc."
                 required
               ></textarea>
               <p class="contact-note">
-                This form is for demo. For real cooperation, please also send details directly to
-                our email.
+                This demo form uses your email client (mailto). For real projects, please also send an email directly.
               </p>
               <button type="submit" class="btn-submit">Send inquiry</button>
             </form>
@@ -849,7 +701,7 @@
 
     <footer>
       <div>© 2025 NovaStep Footwear. All rights reserved.</div>
-      <div>Designed by NovaStep · Hosted on GitHub Pages</div>
+      <div>Design inspired by Apple · Built with pure HTML & CSS</div>
     </footer>
   </div>
 </body>
