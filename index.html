@@ -1,495 +1,816 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>我的小型商城</title>
+  <meta charset="UTF-8" />
+  <title>JH Footwear | Professional Shoe Manufacturer & Exporter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional shoe manufacturer from China, focusing on sports shoes, casual shoes and kids shoes. OEM/ODM for global buyers." />
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #ecfdf3, #f0fdf4); /* 清新绿色背景 */
-      min-height: 100vh;
-      padding: 40px 16px;
-      color: #1f2933;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .page {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
+      padding: 20px 16px 40px;
     }
 
-    /* 顶部栏 */
-    .top-bar {
+    /* Header & nav */
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      gap: 16px;
+      padding: 8px 0 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, #020617, #0f172a);
     }
 
-    .logo {
+    .logo-wrap {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
+      align-items: center;
+      gap: 8px;
     }
 
-    .logo-badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12); /* 浅绿色底 */
-      color: #16a34a;                       /* 主绿色 */
-      font-size: 12px;
-      font-weight: 600;
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 20% 20%, #22c55e, #15803d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: #ecfdf3;
     }
 
-    .logo-title {
-      font-size: 22px;
+    .logo-text-main {
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: 1px;
     }
 
-    .logo-sub {
-      font-size: 13px;
-      color: #6b7280;
+    .logo-text-sub {
+      font-size: 11px;
+      color: #9ca3af;
     }
 
-    .top-actions {
+    nav {
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 20px;
+      font-size: 14px;
     }
 
-    #cart {
+    nav a {
+      color: #e5e7eb;
+      opacity: 0.8;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: #22c55e;
+    }
+
+    .nav-cta {
       padding: 6px 14px;
       border-radius: 999px;
-      background: white;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
-      font-size: 13px;
+      background: #22c55e;
+      color: #02110a;
       font-weight: 600;
-      color: #111827;
-      white-space: nowrap;
-    }
-
-    .btn {
-      padding: 8px 16px;
-      background: #22c55e; /* 按钮主绿色 */
-      color: white;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
       font-size: 13px;
-      font-weight: 500;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
-      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.35);
-      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.6);
     }
 
-    .btn:hover {
-      background: #16a34a; /* hover 更深一点的绿 */
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.5);
+    .nav-cta:hover {
+      background: #16a34a;
     }
 
-    .btn:active {
-      transform: translateY(0);
-      box-shadow: 0 1px 3px rgba(22, 163, 74, 0.3);
+    /* Hero section */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 28px;
+      padding: 32px 0 40px;
+      border-bottom: 1px solid rgba(55, 65, 81, 0.6);
     }
 
-    .btn-secondary {
-      background: white;
-      color: #374151;
-      border: 1px solid #d1fae5;
-      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #bbf7d0;
+      margin-bottom: 10px;
     }
 
-    .btn-secondary:hover {
-      background: #f0fdf4;
-      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.15);
+    .hero-title {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
-    /* 主体卡片容器 */
-    .container {
-      background: white;
-      padding: 24px 24px 28px;
-      max-width: 1000px;
-      margin: 0 auto;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
-      border-radius: 20px;
-      border: 1px solid rgba(134, 239, 172, 0.6); /* 绿色边框 */
+    .hero-highlight {
+      background-image: linear-gradient(to right, #22c55e, #a3e635);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    .container h1 {
-      font-size: 24px;
-      margin-bottom: 6px;
-      text-align: left;
-    }
-
-    .container > p {
-      text-align: left;
+    .hero-text {
       font-size: 14px;
-      color: #6b7280;
+      color: #9ca3af;
       margin-bottom: 18px;
     }
 
-    .products {
+    .hero-list {
+      list-style: none;
+      font-size: 13px;
+      margin-bottom: 18px;
+      color: #d1d5db;
+    }
+
+    .hero-list li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-list li span {
+      font-size: 13px;
+      color: #4ade80;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-primary {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #02110a;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.6);
+    }
+
+    .hero-primary:hover {
+      background: #16a34a;
+    }
+
+    .hero-secondary {
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid #4b5563;
+      color: #e5e7eb;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-secondary:hover {
+      border-color: #9ca3af;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: 18px;
+      padding: 12px;
+      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.3), transparent 50%),
+        #020617;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .hero-shoe-img {
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .hero-card-title {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-text {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .hero-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #bbf7d0;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    /* Products section */
+    .section {
+      padding: 32px 0 10px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .section-sub {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .section-link {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .section-link span {
+      color: #22c55e;
+    }
+
+    .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
-      margin-top: 12px;
     }
 
-    .product {
-      background: #f9fafb;
-      padding: 14px;
-      border-radius: 16px;
-      text-align: left;
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(209, 250, 229, 0.9); /* 浅绿色边 */
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    .product-card {
+      background: #020617;
+      border-radius: 14px;
+      padding: 10px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
     }
 
-    .product:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
-      border-color: #6ee7b7;
-      background: #f0fdf4;
+    .product-img {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      height: 170px;
     }
 
-    .product img {
+    .product-img img {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 10px;
+      transform: scale(1.02);
     }
 
-    .product h3 {
-      font-size: 16px;
+    .product-name {
+      font-size: 14px;
       margin-bottom: 4px;
-      color: #111827;
     }
 
-    .product p {
-      font-size: 14px;
-      color: #16a34a;  /* 价格绿色 */
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .product-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .product-tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.08);
-      color: #15803d;
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      white-space: nowrap;
-    }
-
-    /* 右侧滑出的购物车面板 */
-    #cartDetailsBox {
-      position: fixed;
-      top: 80px;
-      right: -420px;             /* 初始在屏幕外 */
-      background: white;
-      max-width: 380px;
-      width: 320px;
-      padding: 18px 18px 16px;
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
-      text-align: left;
-      font-size: 14px;
-      transition: right 0.3s ease, opacity 0.3s ease;
-      opacity: 0;
-      z-index: 999;
-      border: 1px solid rgba(209, 250, 229, 0.9);
-    }
-    #cartDetailsBox.open {
-      right: 20px;              /* 滑入屏幕 */
-      opacity: 1;
-    }
-
-    .cart-title {
-      font-weight: 700;
-      margin-bottom: 8px;
-      font-size: 15px;
-    }
-
-    .cart-item-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 6px;
-      padding: 4px 0;
-      border-bottom: 1px dashed #e5e7eb;
-    }
-
-    .cart-item-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .cart-item-name {
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .cart-item-meta {
+    .product-tagline {
       font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .product-meta {
+      font-size: 11px;
       color: #6b7280;
     }
 
-    .cart-total {
-      margin-top: 10px;
-      padding-top: 8px;
-      border-top: 1px solid #e5e7eb;
-      font-weight: 700;
-      font-size: 14px;
-      text-align: right;
-      color: #16a34a;
+    /* Advantages */
+    .adv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
     }
 
-    .cart-actions {
-      margin-top: 10px;
+    .adv-card {
+      background: #020617;
+      border-radius: 14px;
+      padding: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .adv-title {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .adv-text {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* Process */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .process-step {
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px dashed rgba(55, 65, 81, 0.9);
+    }
+
+    .process-step span {
+      display: inline-block;
+      font-size: 11px;
+      color: #22c55e;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    /* Contact */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .contact-box {
+      background: #020617;
+      border-radius: 16px;
+      padding: 14px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .contact-item {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .contact-item span {
+      color: #9ca3af;
+      font-size: 12px;
+      display: inline-block;
+      min-width: 70px;
+    }
+
+    form {
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    label {
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 12px;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #22c55e;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-row-inline {
       display: flex;
-      justify-content: flex-end;
       gap: 8px;
     }
 
-    .cart-close-btn {
-      padding: 6px 12px;
-      background: #e5e7eb;
-      color: #374151;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-    .cart-close-btn:hover {
-      background: #d1d5db;
+    .form-row-inline > div {
+      flex: 1;
     }
 
-    .cart-remove-btn {
-      padding: 4px 8px;
+    .form-note {
       font-size: 11px;
+      color: #6b7280;
+    }
+
+    .btn-submit {
+      margin-top: 4px;
+      padding: 8px 16px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
-      background: rgba(248, 113, 113, 0.1);
-      color: #b91c1c;
+      background: #22c55e;
+      color: #02110a;
+      font-size: 13px;
+      font-weight: 600;
+      justify-self: flex-start;
     }
-    .cart-remove-btn:hover {
-      background: rgba(248, 113, 113, 0.2);
+
+    .btn-submit:hover {
+      background: #16a34a;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(55, 65, 81, 0.7);
+      margin-top: 26px;
+      padding-top: 12px;
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    footer a {
+      color: #9ca3af;
     }
 
     @media (max-width: 768px) {
-      body {
-        padding: 20px 10px;
-      }
-      .top-bar {
+      header {
         flex-direction: column;
         align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         gap: 10px;
       }
-      .top-actions {
-        width: 100%;
-        justify-content: space-between;
+      .hero {
+        grid-template-columns: 1fr;
       }
-      #cartDetailsBox {
-        right: -100%;
-        width: calc(100% - 32px);
-      }
-      #cartDetailsBox.open {
-        right: 16px;
+      .contact-layout {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- 顶部区域 -->
-    <header class="top-bar">
-      <div class="logo">
-        <span class="logo-badge">MiniShop</span>
-        <span class="logo-title">我的小型商城</span>
-        <span class="logo-sub">练手小项目 · 自己写代码的电商页面</span>
+    <!-- 头部 Header -->
+    <header>
+      <div class="logo-wrap">
+        <div class="logo-mark">JH</div>
+        <div>
+          <div class="logo-text-main">JH FOOTWEAR</div>
+          <div class="logo-text-sub">Professional Shoe Manufacturer • Since 2015</div>
+        </div>
       </div>
-      <div class="top-actions">
-        <div id="cart">购物车(0)</div>
-        <button class="btn" onclick="viewCart()">查看购物车</button>
-        <button class="btn btn-secondary" onclick="clearCart()">清空购物车</button>
-      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#oem">OEM / ODM</a>
+        <a href="#contact" class="nav-cta">Get Quotation</a>
+      </nav>
     </header>
 
-    <!-- 商品区域 -->
-    <div class="container">
-      <h1>今日推荐 · 杯子专区</h1>
-      <p>这是你亲手写出来的第一个小商城页面，我们先从简单的几款杯子开始练习 😄</p>
+    <!-- Hero 区域 -->
+    <main id="home">
+      <section class="hero">
+        <div>
+          <div class="hero-badge">
+            ✅ Verified factory &nbsp;·&nbsp; 100% quality inspection
+          </div>
+          <h1 class="hero-title">
+            Your Reliable <span class="hero-highlight">Footwear Partner</span><br />
+            for Sports & Casual Shoes
+          </h1>
+          <p class="hero-text">
+            We are a professional footwear manufacturer from China, focusing on sports shoes, casual
+            shoes and kids shoes. We provide OEM/ODM service for brands, wholesalers and online
+            sellers worldwide.
+          </p>
+          <ul class="hero-list">
+            <li><span>●</span> Low MOQ for test orders</li>
+            <li><span>●</span> Flexible customization: materials, colors, logos, packaging</li>
+            <li><span>●</span> Main markets: Europe, North America, Middle East, Southeast Asia</li>
+          </ul>
+          <div class="hero-actions">
+            <button class="hero-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Get Latest Catalogue
+            </button>
+            <button class="hero-secondary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+              View Hot-Selling Styles
+            </button>
+          </div>
+          <p class="hero-note">
+            📌 Chinese support available · 支持中文沟通，工厂对接更顺畅
+          </p>
+        </div>
 
-      <div class="products">
-        <div class="product">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="商品图片">
-          <h3>咖啡杯</h3>
-          <p>￥99</p>
-          <div class="product-footer">
-            <span class="product-tag">热卖 · 咖啡必备</span>
-            <button class="btn" onclick="addToCart('咖啡杯')">加入购物车</button>
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-shoe-img">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                alt="Sport shoes"
+              />
+            </div>
+            <div class="hero-card-title">Running & Training Series</div>
+            <div class="hero-card-text">
+              Lightweight, breathable and comfortable designs, suitable for gym, daily training and
+              e-commerce brands.
+            </div>
+            <div class="hero-pill-row">
+              <div class="hero-pill">Breathable mesh upper</div>
+              <div class="hero-pill">Lightweight EVA outsole</div>
+              <div class="hero-pill">OEM logo support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 产品区域 Products -->
+      <section id="products" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Main Product Lines</div>
+            <div class="section-sub">Sports shoes · Casual shoes · Kids shoes</div>
+          </div>
+          <div class="section-link">
+            Need other styles? <span>Contact us for full catalogue →</span>
           </div>
         </div>
 
-        <div class="product">
-          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80" alt="商品图片">
-          <h3>茶杯</h3>
-          <p>￥79</p>
-          <div class="product-footer">
-            <span class="product-tag">清新 · 下午茶</span>
-            <button class="btn" onclick="addToCart('茶杯')">加入购物车</button>
+        <div class="products-grid">
+          <!-- 你可以替换图片和文案 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1542213493895-edf5b94f5a33?auto=format&fit=crop&w=800&q=80"
+                alt="Men running shoes"
+              />
+            </div>
+            <div class="product-name">Men's Running Shoes</div>
+            <div class="product-tagline">Lightweight · Breathable · Non-slip</div>
+            <div class="product-meta">Size: 40–46 · OEM logo · Custom colors</div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                alt="Training shoes"
+              />
+            </div>
+            <div class="product-name">Unisex Training Shoes</div>
+            <div class="product-tagline">Gym · Fitness · Daily wear</div>
+            <div class="product-meta">Support small orders for online sellers</div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=800&q=80"
+                alt="Casual sneakers"
+              />
+            </div>
+            <div class="product-name">Casual Sneakers</div>
+            <div class="product-tagline">Street style · Everyday comfort</div>
+            <div class="product-meta">Popular in EU market · Flexible packing</div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80"
+                alt="Kids shoes"
+              />
+            </div>
+            <div class="product-name">Kids Shoes</div>
+            <div class="product-tagline">Safety first · Soft and durable</div>
+            <div class="product-meta">Size: 25–35 · EN standard materials</div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80"
+                alt="Slip-on shoes"
+              />
+            </div>
+            <div class="product-name">Slip-On Shoes</div>
+            <div class="product-tagline">Easy wear · Travel-friendly</div>
+            <div class="product-meta">Ideal for Amazon / Shopee / Lazada</div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1588361861040-3c9545970934?auto=format&fit=crop&w=800&q=80"
+                alt="Canvas shoes"
+              />
+            </div>
+            <div class="product-name">Canvas Shoes</div>
+            <div class="product-tagline">Classic style · High margin</div>
+            <div class="product-meta">Support brand customization & packaging</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About & Advantages -->
+      <section id="about" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">About JH Footwear</div>
+            <div class="section-sub">Factory-based exporter from China</div>
           </div>
         </div>
 
-        <div class="product">
-          <img src="https://images.unsplash.com/photo-1522770179533-24471fcdba45?auto=format&fit=crop&w=400&q=80" alt="商品图片">
-          <h3>马克杯</h3>
-          <p>￥89</p>
-          <div class="product-footer">
-            <span class="product-tag">居家 · 大容量</span>
-            <button class="btn" onclick="addToCart('马克杯')">加入购物车</button>
+        <div class="adv-grid">
+          <div class="adv-card">
+            <div class="adv-title">Factory Background</div>
+            <div class="adv-text">
+              Located in Fujian, China, we work closely with several audited factories. Monthly
+              capacity 50,000+ pairs, supporting both bulk orders and flexible test orders.
+            </div>
+          </div>
+
+          <div class="adv-card">
+            <div class="adv-title">Quality Control</div>
+            <div class="adv-text">
+              100% inspection before shipment. Random carton check and professional packaging to
+              guarantee quality when goods arrive at your warehouse.
+            </div>
+          </div>
+
+          <div class="adv-card">
+            <div class="adv-title">Shipping & Terms</div>
+            <div class="adv-text">
+              EXW, FOB, CIF are available. Long-term cooperation with forwarders for sea and air
+              freight. We also support small parcel shipping for online sellers.
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <!-- 右侧滑出的购物车面板 -->
-  <div id="cartDetailsBox"></div>
+      <!-- OEM / ODM -->
+      <section id="oem" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">OEM / ODM Service</div>
+            <div class="section-sub">From idea to real product</div>
+          </div>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <span>01 · Inquiry</span>
+            Send us your target market, quantity and shoe types. We will recommend suitable styles
+            and quote within 24 hours.
+          </div>
+          <div class="process-step">
+            <span>02 · Sampling</span>
+            We make samples based on your design or logo. Sample pictures and videos for checking,
+            then ship physical samples if needed.
+          </div>
+          <div class="process-step">
+            <span>03 · Production</span>
+            After order confirmed, we arrange mass production with clear production schedule and
+            regular updates.
+          </div>
+          <div class="process-step">
+            <span>04 · Inspection & Shipment</span>
+            Final inspection before shipment. Help arrange shipping and provide all necessary
+            documents for customs clearance.
+          </div>
+        </div>
+      </section>
 
-  <script>
-    // 记录购物车里每个商品的数量
-    let cart = {};
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Contact & Quotation</div>
+            <div class="section-sub">Tell us your needs, we reply within 24 hours</div>
+          </div>
+        </div>
 
-    // 每个商品的价格（名字必须和按钮里的参数一模一样）
-    const prices = {
-      "咖啡杯": 99,
-      "茶杯": 79,
-      "马克杯": 89
-    };
+        <div class="contact-layout">
+          <div class="contact-box">
+            <div class="contact-item">
+              <span>📧 Email:</span> <strong>sales@jh-footwear.com</strong>
+            </div>
+            <div class="contact-item">
+              <span>📱 WhatsApp:</span> <strong>+86-138-0000-0000</strong>
+            </div>
+            <div class="contact-item">
+              <span>🏭 Location:</span> Fujian, China
+            </div>
+            <div class="contact-item">
+              <span>💬 Language:</span> English / Chinese
+            </div>
+            <p class="form-note" style="margin-top:8px;">
+              👉 You can also fill in the form, we will send price list and catalogue to your email.
+            </p>
+          </div>
 
-    // 点击“加入购物车”按钮时调用
-    function addToCart(productName) {
-      if (!cart[productName]) {
-        cart[productName] = 1;
-      } else {
-        cart[productName]++;
-      }
-
-      // 更新顶部“购物车：xxx × 数量”
-      updateCartText();
-
-      // 如果购物车面板已经打开，则顺便刷新里面的总价和列表
-      const box = document.getElementById("cartDetailsBox");
-      if (box.classList.contains("open")) {
-        viewCart();
-      }
-
-    
-
-    function updateCartText() {
-      if (Object.keys(cart).length === 0) {
-        document.getElementById("cart").innerText = "购物车(0)";
-        return;
-      }
-      let cartText = "购物车：";
-      for (let item in cart) {
-        cartText += item + " × " + cart[item] + "  ";
-      }
-      document.getElementById("cart").innerText = cartText;
-    }
-
-    // 查看购物车：在右侧滑出卡片，显示明细 + 总价 + 删除按钮
-    function viewCart() {
-      let cartDetails = '<div class="cart-title">🛒 当前购物车内容</div>';
-      let totalPrice = 0;
-
-      if (Object.keys(cart).length === 0) {
-        cartDetails += '<p style="font-size:13px;color:#6b7280;margin-top:4px;">购物车还是空的，去挑几件喜欢的吧～</p>';
-      } else {
-        for (let item in cart) {
-          const price = prices[item] || 0;
-          let itemTotal = cart[item] * price;
-
-          cartDetails += `
-            <div class="cart-item-row">
-              <div class="cart-item-main">
-                <span class="cart-item-name">${item}</span>
-                <span class="cart-item-meta">单价：￥${price} · 数量：${cart[item]}</span>
+          <div class="contact-box">
+            <!-- 这个表单现在只是前端展示，不会真正发邮件 -->
+            <form onsubmit="alert('Thank you! We will contact you within 24 hours.'); return false;">
+              <div class="form-row-inline">
+                <div>
+                  <label for="name">Your Name</label>
+                  <input id="name" type="text" placeholder="Your full name" required />
+                </div>
+                <div>
+                  <label for="company">Company</label>
+                  <input id="company" type="text" placeholder="Company / Brand" />
+                </div>
+              </div>
+              <div class="form-row-inline">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="name@example.com" required />
+                </div>
+                <div>
+                  <label for="market">Target Market</label>
+                  <input id="market" type="text" placeholder="EU / US / Middle East..." />
+                </div>
               </div>
               <div>
-                <span style="font-weight:600;margin-right:6px;">￥${itemTotal}</span>
-                <button class="cart-remove-btn" onclick="removeItem('${item}')">删除</button>
+                <label for="message">Product Requirements</label>
+                <textarea
+                  id="message"
+                  placeholder="Shoe types, quantity, target price, etc."
+                  required
+                ></textarea>
               </div>
-            </div>
-          `;
-
-          totalPrice += itemTotal;
-        }
-
-        cartDetails += `<div class="cart-total">💵 总价：￥${totalPrice}</div>`;
-      }
-
-      cartDetails += `
-        <div class="cart-actions">
-          <button class="cart-close-btn" onclick="closeCart()">收起</button>
+              <p class="form-note">
+                You can also write in Chinese, we will translate and reply in English.
+              </p>
+              <button class="btn-submit" type="submit">Send Inquiry</button>
+            </form>
+          </div>
         </div>
-      `;
+      </section>
+    </main>
 
-      const box = document.getElementById("cartDetailsBox");
-      box.innerHTML = cartDetails;
-      box.classList.add("open");   // 让它从右边滑出来
-    }
-
-    // 清空购物车
-    function clearCart() {
-      cart = {};
-      updateCartText();
-
-      const box = document.getElementById("cartDetailsBox");
-      box.innerHTML = "";
-      box.classList.remove("open");
-
-     
-    }
-
-    // 关闭右侧购物车面板（滑回去）
-    function closeCart() {
-      const box = document.getElementById("cartDetailsBox");
-      box.classList.remove("open");
-    }
-
-    // 删除某一个商品
-    function removeItem(productName) {
-      delete cart[productName];
-      updateCartText();
-      viewCart(); // 删除后，重新渲染右侧面板（总价也会自动重算）
-    }
-  </script>
+    <footer>
+      <div>© 2025 JH Footwear. All rights reserved.</div>
+      <div style="font-size:10px;">Designed & coded by JH · Powered by GitHub Pages</div>
+    </footer>
+  </div>
 </body>
 </html>
-
 
