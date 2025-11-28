@@ -7,10 +7,10 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #FFFFFF;        /* 纯白背景 */
+      --bg: #FFFFFF;
       --text-main: #3A3A3A;
       --text-light: #737373;
-      --btn-bg: #F4F1ED;    /* 按钮淡淡纸张色 */
+      --btn-bg: #F4F1ED;
       --btn-hover: #ECE9E5;
     }
 
@@ -128,7 +128,7 @@
       letter-spacing: 0.6px;
     }
 
-    /* 第二屏：今日值班相册 */
+    /* 通用 section */
     .section {
       max-width: 880px;
       width: 90%;
@@ -152,6 +152,7 @@
       line-height: 1.7;
     }
 
+    /* 第二屏：今日值班相册 */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -203,14 +204,44 @@
       letter-spacing: 0.4px;
     }
 
-    /* 底部小字（比如营业信息，可以以后加） */
-    .footer-info {
-      max-width: 880px;
-      width: 90%;
-      text-align: center;
-      margin: 10px 0 30px;
-      font-size: 11px;
-      color: #B5B5B5;
+    /* 第三屏：大地图排版 */
+    .section-map {
+      padding-bottom: 60px;
+    }
+
+    .map-large {
+      width: 100%;
+      height: 380px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #F5F5F5;
+      margin-bottom: 18px;
+    }
+
+    .map-large iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .map-info {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    .map-info p {
+      margin-bottom: 4px;
+    }
+
+    .map-info strong {
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .map-large {
+        height: 320px;
+      }
     }
   </style>
 </head>
@@ -281,56 +312,78 @@
     </div>
   </section>
 
-<!-- 背景音乐（隐藏播放器） -->
-<audio id="bgm"></audio>
+  <!-- 第三屏：大地图 -->
+  <section class="section section-map">
+    <h2 class="section-title">来这里找我们。</h2>
+    <p class="section-sub">
+      有时候，阳光会比你先一步到达座位。
+    </p>
 
-<!-- 可选：底部淡淡一行 -->
-<div class="footer-info">
-  <!-- 例如：上海 · 某某路 · 营业时间 12:30 – 20:00 -->
-</div>
+    <!-- 大地图块 -->
+    <div class="map-large">
+      <!-- 这里换成你自己的地图 iframe（高德 / 百度 / Google 都可以） -->
+      <!-- 示例 iframe，请替换 src -->
+      <iframe
+        src="https://map.baidu.com/poi/%E9%87%91%E5%88%A9%E5%A4%A7%E5%8E%A6/@12959049.98,4842818.470687494,12.41z?uid=fbcc61ca12f215d8c33644c0&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&sn_xy=12918400,2965708&en_uid=fbcc61ca12f215d8c33644c0&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
 
-<!-- 音乐播放控制 -->
-<script>
-  // 播放列表（修改为你真实文件名）
-  const playlist = [
-    "music/likainanjing.mp3",
-    "music/maomiriji.mp3",
-    "music/song3.mp3"
-  ];
+    <!-- 地址 / 营业时间 / 电话 -->
+    <div class="map-info">
+      <p><strong>Cozy Pets Café · 和猫共享午后</strong></p>
+      <p>📍 北京市 朝阳区 某某路 123 栋 · 2F</p>
+      <p>⏰ 每天 12:30 – 20:00（周二公休）</p>
+      <p>☎ 138-0000-0000</p>
+    </div>
+  </section>
 
-  let currentIndex = 0;
-  const audio = document.getElementById("bgm");
+  <!-- 背景音乐（隐藏播放器，多首循环） -->
+  <audio id="bgm"></audio>
 
-  // 播放当前歌曲
-  function playCurrent() {
-    audio.src = playlist[currentIndex];
-    audio.play().catch(() => {});
-  }
+  <!-- 多首循环播放脚本 -->
+  <script>
+    // 播放列表：改成你真实的文件名
+    const playlist = [
+      "music/likainanjing.mp3",
+      "music/song2.mp3",
+      "music/song3.mp3"
+    ];
 
-  // 播放完成后自动下一首
-  audio.addEventListener("ended", () => {
-    currentIndex = (currentIndex + 1) % playlist.length;
-    playCurrent();
-  });
+    let currentIndex = 0;
+    const audio = document.getElementById("bgm");
 
-  // 页面加载时尝试播放
-  window.addEventListener("load", () => {
-    playCurrent(); // 自动开始播放第一首
-  });
-
-  // 如果被拦截，第一次点击页面时播放
-  function handleFirstInteraction() {
-    if (audio.paused) {
-      playCurrent();
+    function playCurrent() {
+      audio.src = playlist[currentIndex];
+      audio.play().catch(() => {
+        // 自动播放被拦截时先忽略错误
+      });
     }
-    document.removeEventListener("click", handleFirstInteraction);
-    document.removeEventListener("touchstart", handleFirstInteraction);
-  }
 
-  document.addEventListener("click", handleFirstInteraction);
-  document.addEventListener("touchstart", handleFirstInteraction);
+    // 一首播完自动下一首
+    audio.addEventListener("ended", () => {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      playCurrent();
+    });
 
-</script>
+    // 页面加载时尝试播放第一首
+    window.addEventListener("load", () => {
+      playCurrent();
+    });
+
+    // 如果被浏览器拦截，第一次点击页面后开始播
+    function handleFirstInteraction() {
+      if (audio.paused) {
+        playCurrent();
+      }
+      document.removeEventListener("click", handleFirstInteraction);
+      document.removeEventListener("touchstart", handleFirstInteraction);
+    }
+
+    document.addEventListener("click", handleFirstInteraction);
+    document.addEventListener("touchstart", handleFirstInteraction);
+  </script>
 
 </body>
 </html>
